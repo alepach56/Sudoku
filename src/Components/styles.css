@@ -1,0 +1,14 @@
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 0;
+}
+
+.buttonStyle {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+}
