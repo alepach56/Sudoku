@@ -1,0 +1,28 @@
+.grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.grid-cell {
+    width: 60px;
+    height: 60px;
+    border: 0.5px solid #000;
+}
+
+.grid-cell.clicked {
+    background-color: #d8f9ce;
+}
+
+.grid-row:nth-child(3n+1) .grid-cell,
+.grid-row:nth-child(3n+3) .grid-cell {
+    border-top: 3px solid #000;
+}
+
+.grid-cell:nth-child(3n+1),
+.grid-cell:nth-child(3n+3) {
+    border-left: 3px solid #000;
+}

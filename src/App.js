@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import './App.css';
-import GameBoard from './Components/GameBoard';
-import Input from './Components/Input';
+import GameBoard from './Components/GameBoard/GameBoard';
+import DiffButton from './Components/Button/DiffButton';
 
 class App extends Component{
   render(){
     return (
       <div className="App">
-        <h1> Sudoku With Solver</h1>
-          <Input></Input>
+        <h1 className = "Title"> Sudoku With Solver</h1>
+          <DiffButton></DiffButton>
           <GameBoard></GameBoard>
-          
+
         
         
       </div>

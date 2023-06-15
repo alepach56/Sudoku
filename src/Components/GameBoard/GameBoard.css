@@ -1,0 +1,9 @@
+.grid{
+    align-items: center;
+}
+
+.grid-cell{
+    width: 950px;
+    height: 950px;
+    border: 0.05 px solid #000;
+}
