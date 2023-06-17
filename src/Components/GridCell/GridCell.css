@@ -35,3 +35,13 @@
 .grid-cell:last-child {
     border-right: 3.5px solid #000;
 }
+
+.number{
+    color: blue;
+    font-size: xx-large;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
