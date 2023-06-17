@@ -12,12 +12,20 @@
 .diffButtonStyle {
     background: none;
     border: none;
-    padding: 20px;
+    padding: 15px;
     cursor: pointer;
-    color: black;
+    color: #747c97;
+    font-size: x-large;
 }
-
+.diffButtonStyle:hover{
+    background: rgb(221, 229, 231);
+    border-radius: 20px;
+}
 
 .diffButtonStyle:focus{
     color:rgb(105, 149, 254);
+}
+
+.clicked {
+    color: rgb(105, 149, 254);
 }

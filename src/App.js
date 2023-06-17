@@ -7,12 +7,7 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <h1 className = "Title"> Sudoku With Solver</h1> 
-          <DiffButton></DiffButton> 
-          <GameBoard></GameBoard>
-
-        
-        
+        <GameBoard></GameBoard>
       </div>
     );
   }

@@ -1,16 +1,11 @@
 body {
-  background-color: #dee2e9;
+  background-color: #e7ecf5;
 }
 
 .App {
   text-align: center;
-  background-color: #dee2e9;
+  background-color: #e7ecf5;
 }
-
-.Title {
-  padding: 5px;
-}
-
 
 .App-link {
   color: #61dafb;
