@@ -1,7 +1,6 @@
 .board-grid {
     display: flex;
     flex-direction: column;
-    cursor: pointer;
 }
 
 .grid-row {
