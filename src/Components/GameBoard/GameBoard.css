@@ -1,9 +1,11 @@
-.grid{
-    align-items: center;
+
+.board-grid {
+    display: flex;
+    flex-direction: column;
+    height : 80vh;
 }
 
-.grid-cell{
-    width: 950px;
-    height: 950px;
-    border: 0.05 px solid #000;
+.grid-row {
+    display: flex;
+    justify-content: center;
 }

@@ -5,16 +5,20 @@ function GridCell() {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
-    setClicked(!clicked);
+    setClicked(true);
+  };
+
+  const handleBlur = () => {
+    setClicked(false);
   };
 
   return (
     <div
       className={`grid-cell ${clicked ? 'clicked' : ''}`}
       onClick={handleClick}
-    >
-      
-    </div>
+      onBlur={handleBlur}
+      tabIndex={0}
+    ></div>
   );
 }
 
