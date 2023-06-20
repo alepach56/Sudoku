@@ -14,21 +14,6 @@ function GridCell({row, col, val, onClick, onArrowClick}) {
     const handleBlur = () => {
         setClicked(false);
     };
-/*
-    const handleArrowClick = (key) => {
-        handleBlur();
-        console.log(row, col, val, onClick);
-        row--;
-        col--;
-        console.log(row, col);
-
-
-        switch(key){
-            case '37':
-                 row--;
-                 col--;
-                 setClicked(true); 
-        }*/
     
     const handleArrowClick = (direction) => {
         handleBlur();
@@ -41,6 +26,7 @@ function GridCell({row, col, val, onClick, onArrowClick}) {
             let direction;
             switch (event.keyCode) {
                 case 37:
+                    console.log("test");
                     direction = 'left';
                     break;
                 case 38:
@@ -82,3 +68,5 @@ function GridCell({row, col, val, onClick, onArrowClick}) {
 }
 
 export default GridCell;
+
+// test
