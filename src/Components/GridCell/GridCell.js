@@ -22,11 +22,12 @@ function GridCell({row, col, val, onClick, onArrowClick}) {
 
     const handleKeyDown = event => {
         const arrowKeyCodes = [37, 38, 39, 40];
+        console.log("test");
         if (arrowKeyCodes.includes(event.keyCode)) {
             let direction;
             switch (event.keyCode) {
                 case 37:
-                    console.log("test");
+                    
                     direction = 'left';
                     break;
                 case 38:
