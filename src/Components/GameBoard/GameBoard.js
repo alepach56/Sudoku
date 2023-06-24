@@ -3,36 +3,75 @@ import './GameBoard.css';
 import GridCell from '../GridCell/GridCell';
 import DiffButton from '../Button/DiffButton';
 import SolveButton from '../Button/SolveButton';
+
 function GameBoard() {
     console.log('GameBoard received events');
-    const [grid, setGrid] = useState(Array(9).fill(Array(9).fill(null)));
 
-    return (
-        <div>
-            <h1 className = "Title"> Sudoku With Solver</h1> 
-            <DiffButton></DiffButton> 
-            
+  const [grid, setGrid] = useState(
+    Array.from({ length: 9 }, () =>
+      Array.from({ length: 9 }, () => ({ value: null, color: 'red' }))
+    )
+  );
 
-            <div className="board-grid" tabIndex={0}>
-                {grid.map((row, rowIndex) => (
-                <div key={`row-${rowIndex}`} className="grid-row">
-                    {row.map((cellValue, colIndex) => (
-                    <GridCell row = {rowIndex} col = {colIndex}
-                        key={`cell-${rowIndex}-${colIndex}`}
-                        value={cellValue}
-                        
-                
-                />
-                ))}
-                </div>
+  const handleArrowClick = (direction, row, col) => {
+    console.log('GameBoard received arrow click');
+    const updatedGrid = [...grid];
+    console.log(row, col);
+    switch (direction) {
+      case 'left':
+        if (col > 0) {
+          col = col - 1;
+        }
+        break;
+      case 'up':
+        if (row > 0) {
+          row = row - 1;
+        }
+        break;
+      case 'right':
+        if (col < grid[row].length - 1) {
+          col = col + 1;
+        }
+        break;
+      case 'down':
+        if (row < grid.length - 1) {
+          row = row + 1;
+        }
+        break;
+      default:
+        return;
+    }
+    console.log(row, col);
+    updatedGrid[row][col].color = 'green';
+    setGrid(updatedGrid);
+  };
+
+  return (
+    <div>
+      <h1 className="Title">Sudoku With Solver</h1>
+      <DiffButton></DiffButton>
+
+      <div className="board-grid" tabIndex={0}>
+        {grid.map((row, rowIndex) => (
+          <div key={`row-${rowIndex}`} className="grid-row">
+            {row.map((cell, colIndex) => (
+              <GridCell
+                key={`cell-${rowIndex}-${colIndex}`}
+                row={rowIndex}
+                col={colIndex}
+                value={cell.value}
+                color={cell.color}
+                onArrowClick={handleArrowClick}
+              />
             ))}
-            </div>
-            <div className='solveButtonContainer'>
-                <SolveButton> </SolveButton>
-            </div>
-        </div>
-    
-    );
+          </div>
+        ))}
+      </div>
+      <div className="solveButtonContainer">
+        <SolveButton></SolveButton>
+      </div>
+    </div>
+  );
 }
 
 export default GameBoard;
