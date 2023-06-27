@@ -1,19 +1,11 @@
+
 .board-grid {
-    display: flex;
-    flex-direction: column;
-}
-
-.grid-row {
-    display: flex;
-    justify-content: center;
+    margin-left: auto;
+        margin-right: auto;
 }
 
 
-.cellInput {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    text-align: center;
-    padding: 0px;
-    border: 1px;
-}
+
+
+
+

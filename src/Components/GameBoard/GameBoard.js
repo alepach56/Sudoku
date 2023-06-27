@@ -3,6 +3,7 @@ import './GameBoard.css';
 import GridCell from '../GridCell/GridCell';
 import DiffButton from '../Button/DiffButton';
 import SolveButton from '../Button/SolveButton';
+import Grid from '../Grid/Grid';
 
 function GameBoard() {
     console.log('GameBoard received events');
@@ -49,24 +50,10 @@ function GameBoard() {
   return (
     <div>
       <h1 className="Title">Sudoku With Solver</h1>
-      <DiffButton></DiffButton>
-
-      <table className="board-grid">
-        <tbody>
-            {
-                [0,1,2,3,4,5,6,7,8].map((row,rIndex) => {
-                    return <tr key = {rIndex}>
-                        {[0,1,2,3,4,5,6,7,8].map((col,cIndex) => {
-                            return <td key={rIndex+cIndex}>
-                                <input className = "cellInput"></input>
-                        </td>
-                        })}   
-                    </tr>
-                })
-            }
-            
-        </tbody>
-      </table>
+        <DiffButton></DiffButton>
+        <GridCell></GridCell>
+        <Grid></Grid>
+      
       <div className="solveButtonContainer">
         <SolveButton></SolveButton>
       </div>
