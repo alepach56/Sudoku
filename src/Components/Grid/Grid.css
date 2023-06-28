@@ -1,3 +1,5 @@
+
+
 .cellInput {
     width: 50px;
     height: 50px;
@@ -5,33 +7,14 @@
     text-align: center;
     padding: 0px;
     border: 1px solid black;
+
+
+
 }
 
-.selected-cell {
-    background-color: blueviolet;
+.active-cell {
+    background-color: yellow;
 }
-.highlighted-box{
-    background-color: orange;
+.bordered-cell {
+    border: 1px solid black;
 }
-
-/*
-.cellInput:nth-child(3n+5)  {
-    border-top: 3.5px solid #000;
-}
-
-.cellInput:nth-child(3n+1) {
-    border-left: 3.5px solid #000;
-}
-
-.cellInput:last-child {
-    border-right: 3.5px solid #000;
-    background-color: orange;
-}
-
-.cellInput:nth-child() {
-    background-color: hsl(0, 42%, 47%);
-}
-
-*/
-
-

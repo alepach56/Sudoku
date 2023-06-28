@@ -5,29 +5,9 @@ class Grid extends Component {
   state = {
     activeRow: null,
     activeColumn: null,
-    selectedCells: [],
   };
 
-  toggleCellSelection = (row, col) => {
-    const cellId = `${row}-${col}`;
-    this.setState((prevState) => {
-      const selectedCells = [...prevState.selectedCells];
-      const index = selectedCells.indexOf(cellId);
-      if (index !== -1) {
-        selectedCells.splice(index, 1);
-      } else {
-        selectedCells.push(cellId);
-      }
-      return { selectedCells };
-    });
-  };
 
-  isCellSelected = (row, col) => {
-    const cellId = `${row}-${col}`;
-    return this.state.selectedCells.includes(cellId);
-  };
-
-  
   toggleActiveColumn = (rIndex, cIndex) => {
     if (cIndex === this.state.activeColumn) {
       this.setState({
@@ -66,41 +46,21 @@ isBoxHighlighted = (rIndex, cIndex) => {
             <tr key={rIndex}>
               {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((col, cIndex) => (
                 <td
-                
                   key={rIndex + cIndex}
                   className={
                     (rIndex < 3 && cIndex < 9) ||
                     (rIndex >= 3 && rIndex < 6 && cIndex >= 9 && cIndex < 18) ||
                     (rIndex >= 6 && rIndex < 9 && cIndex >= 18)
-                      ? 'green'
+                      ? 'gray'
                       : ''
                   }
-                  
                   style={{
-                    
-                    border:
-                      (row === 0 && (col < 3 || col > 5)) ||
-                      (row === 1 && (col < 3 || col > 5)) ||
-                      (row === 2 && (col < 3 || col > 5)) ||
-                      
-                      (row === 3 && col >= 3 && col < 6) ||
-                      (row === 4 && col >= 3 && col < 6) ||
-                      (row === 5 && col >= 3 && col < 6) ||
-
-
-                      (row === 6 && (col < 3 || col > 5)) ||
-                      (row === 7 && (col < 3 || col > 5)) ||
-                      (row === 8 && (col < 3 || col > 5))
-                        ? '3px solid gray'
-                        : '',
-                    
-                    background:
+                    backgroundColor:
                       this.state.activeRow === rIndex ||
                       this.state.activeColumn === cIndex ||
                       this.isBoxHighlighted(rIndex, cIndex)
-                        ? 'green'
+                        ? 'gray'
                         : '',
-                        
                   }}
                   onClick={() => this.toggleActiveColumn(rIndex, cIndex)}
                 >
