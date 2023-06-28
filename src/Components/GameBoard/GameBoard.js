@@ -51,7 +51,6 @@ function GameBoard() {
     <div>
       <h1 className="Title">Sudoku With Solver</h1>
         <DiffButton></DiffButton>
-        <GridCell></GridCell>
         <Grid></Grid>
       
       <div className="solveButtonContainer">
