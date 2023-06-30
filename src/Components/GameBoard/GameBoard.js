@@ -51,6 +51,22 @@ function GameBoard() {
     <div>
       <h1 className="Title">Sudoku With Solver</h1>
         <DiffButton></DiffButton>
+        <div className="board-grid" tabIndex={0}>
+        {grid.map((row, rowIndex) => (
+          <div key={`row-${rowIndex}`} className="grid-row">
+            {row.map((cell, colIndex) => (
+              <GridCell
+                key={`cell-${rowIndex}-${colIndex}`}
+                row={rowIndex}
+                col={colIndex}
+                value={cell.value}
+                color={cell.color}
+                onArrowClick={handleArrowClick}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
         <GridCell></GridCell>
         <Grid></Grid>
       
