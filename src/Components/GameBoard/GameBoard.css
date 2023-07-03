@@ -3,6 +3,7 @@
 .board-grid {
     display: flex;
     flex-direction: column;
+    background-color: blue;
 }
 
 .grid-row {
