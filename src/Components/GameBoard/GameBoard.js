@@ -14,38 +14,7 @@ function GameBoard() {
     )
   );
 
-  const handleArrowClick = (direction, row, col) => {
-    console.log('GameBoard received arrow click');
-    const updatedGrid = [...grid];
-    console.log(row, col);
-    switch (direction) {
-      case 'left':
-        if (col > 0) {
-          col = col - 1;
-        }
-        break;
-      case 'up':
-        if (row > 0) {
-          row = row - 1;
-        }
-        break;
-      case 'right':
-        if (col < grid[row].length - 1) {
-          col = col + 1;
-        }
-        break;
-      case 'down':
-        if (row < grid.length - 1) {
-          row = row + 1;
-        }
-        break;
-      default:
-        return;
-    }
-    console.log(row, col);
-    updatedGrid[row][col].color = 'green';
-    setGrid(updatedGrid);
-  };
+  
 
   return (
     <div>
@@ -61,15 +30,14 @@ function GameBoard() {
                 col={colIndex}
                 value={cell.value}
                 color={cell.color}
-                onArrowClick={handleArrowClick}
               />
             ))}
           </div>
         ))}
       </div>
-        <GridCell></GridCell>
-        <Grid></Grid>
-      
+      {
+       // <Grid></Grid>
+      }
       <div className="solveButtonContainer">
         <SolveButton></SolveButton>
       </div>
